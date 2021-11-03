@@ -7,7 +7,7 @@ import 'package:aria2/aria2.dart';
 void main() {
   test('test aria2', () async {
     Aria2c aria2c =
-        Aria2c('https://aria2.fengtech.top:60000/jsonrpc', "http", "fgqcvu");
+        Aria2c('https://XXXXX/jsonrpc', "http", "XXXX");
     var version = await aria2c.getVersion();
     print(version.toString());
 

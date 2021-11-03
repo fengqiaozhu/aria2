@@ -19,12 +19,12 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
 
   Future _requestApi(String method, List params) async {
     if (secret != "") {
-      if(method!="system.multicall"){
+      if (method != "system.multicall") {
         params.insert(0, "token:$secret");
-      }else{
-        for (var i=0;i<params.length;i++) {
+      } else {
+        for (var i = 0; i < params.length; i++) {
           params[i]["params"].insert(0, "token:$secret");
-          params =[params];
+          params = [params];
         }
       }
     }
@@ -52,7 +52,7 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
   }
 
   @override
-   getVersion() async {
+  getVersion() async {
     return await _requestApi("aria2.getVersion", []);
   }
 
@@ -155,7 +155,7 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
 
   @override
   Future multicall(List<aria2_methods.Method> methods) async {
-    var _methods = methods.map((item)=>item.toMap());
+    var _methods = methods.map((item) => item.toMap());
     return await _requestApi('system.multicall', _methods.toList());
   }
 

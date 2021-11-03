@@ -2,6 +2,7 @@
 class Method {
   /// 方法名称
   String methodName;
+
   /// 方法参数
   List params;
   Method(this.methodName, this.params);
