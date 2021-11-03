@@ -1,4 +1,4 @@
-# Aria2
+# Aria2-Dart-Package
 
 An aria2 api package developed with dart which can be used in a flutter project, support http and websocket connection to an aria2 jsonrpc server.
 
