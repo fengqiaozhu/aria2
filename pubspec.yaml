@@ -1,7 +1,7 @@
 name: aria2
 description: An aria2 api package developed with dart which can be used in a flutter project, support http and websocket connection to an aria2 jsonrpc server.
 version: 0.0.1
-homepage: https://github.com/fengqiaozhu/aria2-dart-package.git
+homepage: https://github.com/fengqiaozhu/aria2
 
 environment:
   sdk: ">=2.12.0 <3.0.0"
