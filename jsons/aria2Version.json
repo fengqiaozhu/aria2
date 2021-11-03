@@ -1,0 +1,14 @@
+{
+    "enabledFeatures": [
+        "Async DNS",
+        "BitTorrent",
+        "Firefox3 Cookie",
+        "GZip",
+        "HTTPS",
+        "Message Digest",
+        "Metalink",
+        "XML-RPC",
+        "SFTP"
+    ],
+    "version": "1.36.0"
+}

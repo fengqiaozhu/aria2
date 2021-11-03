@@ -2,6 +2,8 @@ import 'aria2_methods.dart' as aria2_methods;
 import "package:json_rpc_2/json_rpc_2.dart" as json_rpc;
 import "package:web_socket_channel/io.dart";
 import 'package:dio/dio.dart';
+import '../models/index.dart';
+import 'dart:convert';
 
 class Aria2Connection implements aria2_methods.Aria2Methods {
   // ignore: prefer_typing_uninitialized_variables
@@ -37,7 +39,9 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
         "method": method,
         "params": params
       });
-      return res.data;
+      // return res.data;
+      var data = json.decode(res.data);
+      return data["result"];
     }
   }
 
@@ -52,8 +56,9 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
   }
 
   @override
-  getVersion() async {
-    return await _requestApi("aria2.getVersion", []);
+  Future<Aria2Version> getVersion() async {
+    var data = await _requestApi("aria2.getVersion", []);
+    return Aria2Version.fromJson(data);
   }
 
   @override
@@ -67,8 +72,8 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
   }
 
   @override
-  Future changeGlobalOption(option) async {
-    return await _requestApi('aria2.changeGlobalOption', [option]);
+  Future<Aria2GlobalOption> changeGlobalOption(option) async {
+    return Aria2GlobalOption.fromJson(await _requestApi('aria2.changeGlobalOption', [option]));
   }
 
   @override
@@ -109,8 +114,9 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
   }
 
   @override
-  Future getGlobalOption() async {
-    return await _requestApi('aria2.getGlobalOption', []);
+  Future<Aria2GlobalOption> getGlobalOption() async {
+    var data = await _requestApi('aria2.getGlobalOption', []);
+    return Aria2GlobalOption.fromJson(data);
   }
 
   @override
