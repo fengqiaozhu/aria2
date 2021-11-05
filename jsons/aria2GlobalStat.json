@@ -1,0 +1,15 @@
+{
+    "@meta": {
+        "import": [
+            "../modules/tools.dart"
+        ],
+        "comments": {},
+        "nullable": true
+    },
+    "@JsonKey(name: 'downloadSpeed', fromJson: toInt, toJson: toString) int?": "downloadSpeed",
+    "@JsonKey(name: 'numActive', fromJson: toInt, toJson: toString) int?": "numActive",
+    "@JsonKey(name: 'numStopped', fromJson: toInt, toJson: toString) int?": "numStopped",
+    "@JsonKey(name: 'numStoppedTotal', fromJson: toInt, toJson: toString) int?": "numStoppedTotal",
+    "@JsonKey(name: 'numWaiting', fromJson: toInt, toJson: toString) int?": "numWaiting",
+    "@JsonKey(name: 'uploadSpeed', fromJson: toInt, toJson: toString) int?": "uploadSpeed"
+}

@@ -1,0 +1,16 @@
+{
+    "@meta": {
+        "import": [
+          "../modules/tools.dart"
+        ],
+        "comments": {
+        },
+        "nullable": true
+      },
+    "@JsonKey(name: 'completedLength', fromJson: toInt, toJson: toString) int?": "completedLength",
+    "@JsonKey(name: 'index', fromJson: toInt, toJson: toString) int?": "index",
+    "@JsonKey(name: 'length', fromJson: toInt, toJson: toString) int?": "length",
+    "path": "/downloads/xxx/Exchange Students with Benefits [2021]/Bella Rico.mp4",
+    "@JsonKey(name: 'selected', fromJson: toBool, toJson: toString) bool?": "selected",
+    "uris": []
+}

@@ -703,11 +703,11 @@
         "mode": "multi"
     },
     "belongsTo":"aaaaa",
-    "@JsonKey(name: 'completedLength', fromJson: strToInt, toJson: toString) int?": "completedLength",
-    "@JsonKey(name: 'connections', fromJson: strToInt, toJson: toString) int?": "connections",
+    "@JsonKey(name: 'completedLength', fromJson: toInt, toJson: toString) int?": "completedLength",
+    "@JsonKey(name: 'connections', fromJson: toInt, toJson: toString) int?": "connections",
     "dir": "/downloads/xxx",
-    "@JsonKey(name: 'downloadSpeed', fromJson: strToInt, toJson: toString) int?": "downloadSpeed",
-    "@JsonKey(name: 'errorCode', fromJson: strToInt, toJson: toString) int?": "errorCode",
+    "@JsonKey(name: 'downloadSpeed', fromJson: toInt, toJson: toString) int?": "downloadSpeed",
+    "@JsonKey(name: 'errorCode', fromJson: toInt, toJson: toString) int?": "errorCode",
     "errorMessage": "",
     "files": [
         {
@@ -723,15 +723,15 @@
     "@JsonKey(name: 'followedBy') List<String>?": "followedBy",
     "gid": "31ca65902e563616",
     "infoHash": "d691a6df1d9eb5ae09e7b9ab74d9aae236a0fcaf",
-    "@JsonKey(name: 'numPieces', fromJson: strToInt, toJson: toString) int?": "numPieces",
-    "@JsonKey(name: 'numSeeders', fromJson: strToInt, toJson: toString) int?": "numSeeders",
-    "@JsonKey(name: 'pieceLength', fromJson: strToInt, toJson: toString) int?": "pieceLength",
+    "@JsonKey(name: 'numPieces', fromJson: toInt, toJson: toString) int?": "numPieces",
+    "@JsonKey(name: 'numSeeders', fromJson: toInt, toJson: toString) int?": "numSeeders",
+    "@JsonKey(name: 'pieceLength', fromJson: toInt, toJson: toString) int?": "pieceLength",
     "status": "complete",
-    "@JsonKey(name: 'seeder', fromJson: tFStringToBool, toJson: toString) bool?": "seeder",
-    "@JsonKey(name: 'totalLength', fromJson: strToInt, toJson: toString) int?": "totalLength",
-    "@JsonKey(name: 'uploadLength', fromJson: strToInt, toJson: toString) int?": "uploadLength",
-    "@JsonKey(name: 'uploadSpeed', fromJson: strToInt, toJson: toString) int?": "uploadSpeed",
-    "@JsonKey(name: 'verifiedLength', fromJson: strToInt, toJson: toString) int?": "verifiedLength",
-    "@JsonKey(name: 'verifyIntegrityPending', fromJson: tFStringToBool, toJson: toString) bool?": "verifyIntegrityPending"
+    "@JsonKey(name: 'seeder', fromJson: toBool, toJson: toString) bool?": "seeder",
+    "@JsonKey(name: 'totalLength', fromJson: toInt, toJson: toString) int?": "totalLength",
+    "@JsonKey(name: 'uploadLength', fromJson: toInt, toJson: toString) int?": "uploadLength",
+    "@JsonKey(name: 'uploadSpeed', fromJson: toInt, toJson: toString) int?": "uploadSpeed",
+    "@JsonKey(name: 'verifiedLength', fromJson: toInt, toJson: toString) int?": "verifiedLength",
+    "@JsonKey(name: 'verifyIntegrityPending', fromJson: toBool, toJson: toString) bool?": "verifyIntegrityPending"
     
 }

@@ -72,13 +72,13 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
   }
 
   @override
-  Future<String> changeGlobalOption(option) async {
-    return await _requestApi('aria2.changeGlobalOption', [option]);
+  Future<String> changeGlobalOption(Aria2Option options) async {
+    return await _requestApi('aria2.changeGlobalOption', [options.toJson()]);
   }
 
   @override
-  Future<String> changeOption(String gid, options) async {
-    return await _requestApi('aria2.changeOption', [gid, options]);
+  Future<String> changeOption(String gid, Aria2Option options) async {
+    return await _requestApi('aria2.changeOption', [gid, options.toJson]);
   }
 
   @override
@@ -107,46 +107,53 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
   Future<String> forceShutdown() async {
     return await _requestApi('aria2.forceShutdown', []);
   }
-  /// 需要model
-  @override 
-  Future getFiles(String gid) async {
-    return await _requestApi('aria2.getFiles', [gid]);
+
+  @override
+  Future<List<Aria2File>> getFiles(String gid) async {
+    var data = await _requestApi('aria2.getFiles', [gid]);
+    return data.map<Aria2File>((dt) => Aria2File.fromJson(dt)).toList();
   }
 
   @override
-  Future<Aria2GlobalOption> getGlobalOption() async {
+  Future<Aria2Option> getGlobalOption() async {
     var data = await _requestApi('aria2.getGlobalOption', []);
-    return Aria2GlobalOption.fromJson(data);
+    return Aria2Option.fromJson(data);
   }
-  /// 需要model
+
   @override
-  Future getGlobalStat() async {
-    return await _requestApi('aria2.getGlobalStat', []);
+  Future<Aria2GlobalStat> getGlobalStat() async {
+    var data = await _requestApi('aria2.getGlobalStat', []);
+    return Aria2GlobalStat.fromJson(data);
   }
-  /// 需要model
+
   @override
-  Future getOption(String gid) async {
-    return await _requestApi('aria2.getOption', [gid]);
+  Future<Aria2Option> getOption(String gid) async {
+    var data = await _requestApi('aria2.getOption', [gid]);
+    return Aria2Option.fromJson(data);
   }
-  /// 需要model
+
   @override
-  Future getPeers(String gid) async {
-    return await _requestApi('aria2.getPeers', [gid]);
+  Future<List<Aria2Peer>> getPeers(String gid) async {
+    var data = await _requestApi('aria2.getPeers', [gid]);
+    return data.map<Aria2Peer>((dt) => Aria2Peer.fromJson(dt)).toList();
   }
-  /// 需要model
+
   @override
-  Future getServers(String gid) async {
-    return await _requestApi('aria2.getServers', [gid]);
+  Future<List<Aria2Server>> getServers(String gid) async {
+    var data = await _requestApi('aria2.getServers', [gid]);
+    return data.map<Aria2Server>((dt) => Aria2Server.fromJson(dt)).toList();
   }
-  /// 需要model
+
   @override
-  Future getSessionInfo() async {
-    return await _requestApi('aria2.getSessionInfo', []);
+  Future<Aria2SessionInfo> getSessionInfo() async {
+    var data = await _requestApi('aria2.getSessionInfo', []);
+    return Aria2SessionInfo.fromJson(data);
   }
-  /// 需要model
+
   @override
-  Future getUris(String gid) async {
-    return await _requestApi('aria2.getUris', [gid]);
+  Future<List<Aria2Url>> getUris(String gid) async {
+    var data = await _requestApi('aria2.getUris', [gid]);
+    return data.map<Aria2Url>((dt) => Aria2Url.fromJson(dt)).toList();
   }
 
   @override
@@ -202,8 +209,8 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
 
   @override
   Future<List<Aria2Task>> tellActive() async {
-     var data = await _requestApi('aria2.tellActive', []);
-    return data.map<Aria2Task>((dt)=>Aria2Task.fromJson(dt)).toList();
+    var data = await _requestApi('aria2.tellActive', []);
+    return data.map<Aria2Task>((dt) => Aria2Task.fromJson(dt)).toList();
   }
 
   @override
@@ -215,13 +222,13 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
   @override
   Future<List<Aria2Task>> tellStopped(int offset, int num) async {
     var data = await _requestApi('aria2.tellStopped', [offset, num]);
-    return data.map<Aria2Task>((dt)=>Aria2Task.fromJson(dt)).toList();
+    return data.map<Aria2Task>((dt) => Aria2Task.fromJson(dt)).toList();
   }
 
   @override
   Future<List<Aria2Task>> tellWaiting(int offset, int num) async {
     var data = await _requestApi('aria2.tellWaiting', [offset, num]);
-    return data.map<Aria2Task>((dt)=>Aria2Task.fromJson(dt)).toList();
+    return data.map<Aria2Task>((dt) => Aria2Task.fromJson(dt)).toList();
   }
 
   @override

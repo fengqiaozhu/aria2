@@ -1,0 +1,13 @@
+{
+    "@meta": {
+        "import": [
+            "../modules/tools.dart"
+        ],
+        "comments": {
+            "allowOverwrite": "允许覆盖"
+        },
+        "nullable": false
+    },
+    "@JsonKey(name: 'index', fromJson: toInt, toJson: toString) int?": "index",
+    "servers":"$[]aria2ServerItem"
+}
