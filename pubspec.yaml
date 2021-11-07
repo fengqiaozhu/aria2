@@ -11,6 +11,7 @@ dependencies:
   dio: ^4.0.1
   flutter:
     sdk: flutter
+  json_annotation: ^4.1.0
   json_rpc_2: ^3.0.1
   web_socket_channel: ^2.1.0
 

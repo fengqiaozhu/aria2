@@ -11,7 +11,7 @@ An aria2 api package developed with dart which can be used in a flutter project,
 ## Getting started
 
 ```
-flutter get aria2
+flutter pub add aria2
 ```
 
 ## Usage
