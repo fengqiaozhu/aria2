@@ -1,3 +1,5 @@
+import '../models/aria2Option.dart';
+
 /// aria2方法
 class Method {
   /// 方法名称
@@ -80,13 +82,13 @@ abstract class Aria2Methods {
       String gid, int fileIndex, List<String> delUris, List<String> addUris);
 
   /// 修改任务配置，部分参数修改完任务重启
-  changeOption(String gid, options);
+  changeOption(String gid, Aria2Option options);
 
   /// 获取全局配置
   getGlobalOption();
 
   /// 修改全局配置
-  changeGlobalOption(option);
+  changeGlobalOption(Aria2Option option);
 
   /// 清除所有完成/报错/删除的任务信息
   purgeDownloadResult();

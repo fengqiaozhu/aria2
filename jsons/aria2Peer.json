@@ -1,0 +1,20 @@
+{
+    "@meta": {
+        "import": [
+          "../modules/tools.dart"
+        ],
+        "comments": {
+          "allowOverwrite": "允许覆盖"
+        },
+        "nullable": true
+      },
+    "@JsonKey(name: 'amChoking', fromJson: toBool, toJson: toString) bool?": "amChoking",
+    "bitfield":"ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe0",
+    "@JsonKey(name: 'downloadSpeed', fromJson: toInt, toJson: toString) int?": "downloadSpeed",
+    "ip":"24.144.15.99",
+    "@JsonKey(name: 'peerChoking', fromJson: toBool, toJson: toString) bool?": "peerChoking",
+    "peerId":"%2DqB4180%2DKZ6YNypkcHGQ",
+    "@JsonKey(name: 'port', fromJson: toInt, toJson: toString) int?": "port",
+    "@JsonKey(name: 'seeder', fromJson: toBool, toJson: toString) bool?": "seeder",
+    "@JsonKey(name: 'uploadSpeed', fromJson: toInt, toJson: toString) int?": "uploadSpeed"
+}
