@@ -7,3 +7,7 @@
 ## 0.0.2
 
 1. Make some file match Dart formatter.
+
+
+## 0.1.0
+1. Update the http connection to aria2 server, change the request params from json to dart model.

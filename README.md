@@ -19,16 +19,26 @@ You can use this package like this:
 ```dart
 import 'package:aria2/aria2.dart';
 
-// protocol can be "http" or "websocket"
-Aria2c aria2c = Aria2c(rpcUrl, protocol, secret);
+void main() async {
+    try{
+        // protocol can be "http" or "websocket"
+        Aria2c aria2c = Aria2c(rpcUrl, protocol, secret);
 
-var version = await aria2c.getVersion();
-print(version.toString());
-// return {"id":"flutter","jsonrpc":"2.0","result":{"enabledFeatures":["Async DNS","BitTorrent","Firefox3 Cookie","GZip","HTTPS","Message Digest","Metalink","XML-RPC","SFTP"],"version":"1.36.0"}}
+        Aria2Version version = await aria2c.getVersion();
+        print(version.toString());
+        // return {"id":"flutter","jsonrpc":"2.0","result":{"enabledFeatures":["Async DNS","BitTorrent","Firefox3 Cookie","GZip","HTTPS","Message Digest","Metalink","XML-RPC","SFTP"],"version":"1.36.0"}}
 
-var globalStatus = await aria2c.getGlobalStat();
-print(globalStatus.toString());
-//return {"id":"flutter","jsonrpc":"2.0","result":{"downloadSpeed":"0","numActive":"0","numStopped":"34","numStoppedTotal":"36","numWaiting":"0","uploadSpeed":"0"}}
+        Aria2GlobalStat globalStatus = await aria2c.getGlobalStat();
+        print(globalStatus.toString());
+        //return {"id":"flutter","jsonrpc":"2.0","result":{"downloadSpeed":"0","numActive":"0","numStopped":"34","numStoppedTotal":"36","numWaiting":"0","uploadSpeed":"0"}}
+
+        Aria2Option option = Aria2Option()
+            ..maxOverallDownloadLimit = 1024*1024*3;
+        await aria2c.changeGlobalOption(option)
+    } catch (e) {
+        print(e);
+    }
+}
 ```
 More aria2 usage can be found at [aria2c API]("http://aria2.github.io/manual/en/html/aria2c.html")
 
