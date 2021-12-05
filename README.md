@@ -13,6 +13,11 @@ An aria2 api package developed with dart which can be used in a flutter project,
 ```
 flutter pub add aria2
 ```
+## Develop
+```
+// Run below shell after change the jsons/*.json model config file;
+flutter packages pub run json_model
+```
 
 ## Usage
 You can use this package like this:

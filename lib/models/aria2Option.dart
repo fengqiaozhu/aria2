@@ -49,7 +49,7 @@ class Aria2Option {
   @JsonKey(includeIfNull: false, name: 'dht-entry-point6') String? dhtEntryPoint6;
   @JsonKey(includeIfNull: false, name: 'dht-file-path') String? dhtFilePath;
   @JsonKey(includeIfNull: false, name: 'dht-file-path6') String? dhtFilePath6;
-  @JsonKey(includeIfNull: false, name: 'dht-listen-port', fromJson: toInt, toJson: toString) int? dhtListenPort;
+  @JsonKey(includeIfNull: false, name: 'dht-listen-port') String? dhtListenPort;
   @JsonKey(includeIfNull: false, name: 'dht-message-timeout', fromJson: toInt, toJson: toString) int? dhtMessageTimeout;
   @JsonKey(includeIfNull: false, name: 'dir') String? dir;
   @JsonKey(includeIfNull: false, name: 'disable-ipv6', fromJson: toBool, toJson: toString) bool? disableIpv6;

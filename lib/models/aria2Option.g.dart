@@ -50,7 +50,7 @@ Aria2Option _$Aria2OptionFromJson(Map<String, dynamic> json) => Aria2Option()
   ..dhtEntryPoint6 = json['dht-entry-point6'] as String?
   ..dhtFilePath = json['dht-file-path'] as String?
   ..dhtFilePath6 = json['dht-file-path6'] as String?
-  ..dhtListenPort = toInt(json['dht-listen-port'])
+  ..dhtListenPort = json['dht-listen-port'] as String?
   ..dhtMessageTimeout = toInt(json['dht-message-timeout'])
   ..dir = json['dir'] as String?
   ..disableIpv6 = toBool(json['disable-ipv6'])
@@ -210,7 +210,7 @@ Map<String, dynamic> _$Aria2OptionToJson(Aria2Option instance) {
   writeNotNull('dht-entry-point6', instance.dhtEntryPoint6);
   writeNotNull('dht-file-path', instance.dhtFilePath);
   writeNotNull('dht-file-path6', instance.dhtFilePath6);
-  writeNotNull('dht-listen-port', toString(instance.dhtListenPort));
+  writeNotNull('dht-listen-port', instance.dhtListenPort);
   writeNotNull('dht-message-timeout', toString(instance.dhtMessageTimeout));
   writeNotNull('dir', instance.dir);
   writeNotNull('disable-ipv6', toString(instance.disableIpv6));

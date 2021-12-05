@@ -11,3 +11,7 @@
 
 ## 0.1.0
 1. Update the http connection to aria2 server, change the request params from json to dart model.
+
+
+## 0.1.1
+1. fix `dht-listen-port` type error;
