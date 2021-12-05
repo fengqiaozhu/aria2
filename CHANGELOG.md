@@ -15,3 +15,6 @@
 
 ## 0.1.1
 1. fix `dht-listen-port` type error;
+
+## 0.1.2
+1. fix `listen-port`,`rpc-listen-port` type error;

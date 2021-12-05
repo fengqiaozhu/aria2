@@ -83,7 +83,7 @@ Aria2Option _$Aria2OptionFromJson(Map<String, dynamic> json) => Aria2Option()
   ..humanReadable = toBool(json['human-readable'])
   ..keepUnfinishedDownloadResult =
       toBool(json['keep-unfinished-download-result'])
-  ..listenPort = toInt(json['listen-port'])
+  ..listenPort = json['listen-port'] as String?
   ..logLevel = json['log-level'] as String?
   ..lowestSpeedLimit = toInt(json['lowest-speed-limit'])
   ..maxConcurrentDownloads = toInt(json['max-concurrent-downloads'])
@@ -128,7 +128,7 @@ Aria2Option _$Aria2OptionFromJson(Map<String, dynamic> json) => Aria2Option()
   ..rlimitNofile = toInt(json['rlimit-nofile'])
   ..rpcAllowOriginAll = json['rpc-allow-origin-all'] as String?
   ..rpcListenAll = toBool(json['rpc-listen-all'])
-  ..rpcListenPort = toInt(json['rpc-listen-port'])
+  ..rpcListenPort = json['rpc-listen-port'] as String?
   ..rpcMaxRequestSize = toInt(json['rpc-max-request-size'])
   ..rpcSaveUploadMetadata = toBool(json['rpc-save-upload-metadata'])
   ..rpcSecure = toBool(json['rpc-secure'])
@@ -245,7 +245,7 @@ Map<String, dynamic> _$Aria2OptionToJson(Aria2Option instance) {
   writeNotNull('human-readable', toString(instance.humanReadable));
   writeNotNull('keep-unfinished-download-result',
       toString(instance.keepUnfinishedDownloadResult));
-  writeNotNull('listen-port', toString(instance.listenPort));
+  writeNotNull('listen-port', instance.listenPort);
   writeNotNull('log-level', instance.logLevel);
   writeNotNull('lowest-speed-limit', toString(instance.lowestSpeedLimit));
   writeNotNull(
@@ -299,7 +299,7 @@ Map<String, dynamic> _$Aria2OptionToJson(Aria2Option instance) {
   writeNotNull('rlimit-nofile', toString(instance.rlimitNofile));
   writeNotNull('rpc-allow-origin-all', instance.rpcAllowOriginAll);
   writeNotNull('rpc-listen-all', toString(instance.rpcListenAll));
-  writeNotNull('rpc-listen-port', toString(instance.rpcListenPort));
+  writeNotNull('rpc-listen-port', instance.rpcListenPort);
   writeNotNull('rpc-max-request-size', toString(instance.rpcMaxRequestSize));
   writeNotNull(
       'rpc-save-upload-metadata', toString(instance.rpcSaveUploadMetadata));
