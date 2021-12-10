@@ -26,8 +26,8 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
       } else {
         for (var i = 0; i < params.length; i++) {
           params[i]["params"].insert(0, "token:$secret");
-          params = [params];
         }
+        params = [params];
       }
     }
     if (protocol == 'websocket') {

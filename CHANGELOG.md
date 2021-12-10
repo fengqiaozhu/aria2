@@ -18,3 +18,6 @@
 
 ## 0.1.2
 1. fix `listen-port`,`rpc-listen-port` type error;
+
+## 0.1.3
+1. fix multicall bug;
