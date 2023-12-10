@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'aria2_methods.dart' as aria2_methods;
 import "package:json_rpc_2/json_rpc_2.dart" as json_rpc;
 import "package:web_socket_channel/io.dart";
@@ -16,6 +18,8 @@ class Aria2Connection implements aria2_methods.Aria2Methods {
     if (protocol == 'websocket') {
       var _socket = IOWebSocketChannel.connect(rpcUrl);
       _client = json_rpc.Client(_socket.cast<String>());
+
+      unawaited(_client.listen());
     }
   }
 
